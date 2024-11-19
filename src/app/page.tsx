@@ -8,9 +8,12 @@ export default function Home() {
   return (
     <>
       <div className="mx-auto max-w-[1200px]">
-        <section className="h-screen flex flex-col justify-center items-center gap-20">
+        <section
+          id="#home-section"
+          className="h-screen flex flex-col justify-center items-center gap-20"
+        >
           <div className="flex flex-col md:flex-row gap-20">
-            <div className="bg-slate-300 rounded-full max-w-[400px] flex justify-center items-center overflow-hidden">
+            <div className="bg-slate-300 rounded-full max-w-[400px] max-h-[400px] flex justify-center items-center overflow-hidden">
               <Image
                 src={"/profilepic.png"}
                 width={300}
@@ -36,7 +39,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="flex flex-row gap-9 items-center">
+          <div className="flex flex-col md:flex-row gap-9 items-center">
             <p className="font-bold text-[20px]">Tech Stack |</p>
             <div className="flex flex-row gap-3">
               <Image src={"/html-5.png"} alt="html-5" width={50} height={50} />
@@ -59,21 +62,24 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="flex flex-col items-center gap-4 bg-[#ECECEC] py-4 mb-6 rounded-lg">
-          <div className="max-w-[1200px] flex flex-col gap-3 ">
+        <section
+          id="#about-section"
+          className="flex flex-col items-center gap-4 py-4 mb-6 px-4"
+        >
+          <div className="flex flex-col gap-3 max-w-full">
             <h1 className="font-bold text-3xl mb-4 text-start">About Me</h1>
-            <div className="flex flex-row gap-4 items-center">
-              <div className="w-[500px]">
+            <div className="flex flex-col md:flex-row gap-4 items-center">
+              <div className="">
                 <Image
                   src={"/laptop.jpg"}
                   alt="laptop"
-                  width={1000}
+                  width={1400}
                   height={0}
                   className="rounded-lg"
                   layout="intrinsic"
                 />
               </div>
-              <div className="max-w-[600px]">
+              <div className="max-w-full">
                 <p className="mb-3">
                   I'm an aspiring front-end developer with a passion for
                   creating visually appealing websites. Even though i'm still
@@ -97,13 +103,16 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="flex flex-col gap-4 py-4 mx-4">
+        <section
+          id="#projects-section"
+          className="flex flex-col gap-4 py-4 mx-4"
+        >
           <div className="max-w-[1200px] flex flex-col gap-3 ">
             <h1 className="font-bold text-3xl mb-4 text-start">Projects</h1>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-1 justify-center gap-5">
               <ProjectCard
                 projectName="RoguePixel"
-                imgSrc="/roguepixel.png"
+                imgSrc="/thumbnail/thumbnail-roguepixel.png"
                 imgAlt="roguepixel"
                 bgColor="bg-[#dc2626]"
                 techs={["NextJS", "Javascript"]}
@@ -112,19 +121,23 @@ export default function Home() {
               />
               <ProjectCard
                 projectName="The Band Website"
-                imgSrc="/roguepixel.png"
-                imgAlt="roguepixel"
-                bgColor="bg-[#7f1d1d]"
-                techs={["1", "2"]}
+                imgSrc="/thumbnail/thumbnail-moonlit.png"
+                imgAlt="moonlit"
+                bgColor="bg-black"
+                techs={["NextJS", "Typescript"]}
+                repositoryLink="https://github.com/malvz22/the-band-next"
+                websiteLink="https://moonlightsirens.vercel.app/"
               />
               <ProjectCard
-                projectName="RoguePixel"
-                imgSrc="/roguepixel.png"
-                imgAlt="roguepixel"
-                bgColor="bg-red-600"
-                techs={["1", "2"]}
+                projectName="Simpang Raya"
+                imgSrc="/thumbnail/thumbnail-sr.png"
+                imgAlt="simpang raya"
+                bgColor="bg-[#A22020]"
+                techs={["NextJS", "Typescript"]}
+                repositoryLink="https://github.com/malvz22/simpang-raya"
+                websiteLink="https://simpang-raya.vercel.app/"
               />
-              <div className="flex flex-col gap-3 col-span-1">
+              {/* <div className="flex flex-col gap-3 col-span-1">
                 <h1 className="text-[24px] font-semibold">The Band Website</h1>
                 <div className="flex flex-row gap-2">
                   <Nextjs />
@@ -138,8 +151,8 @@ export default function Home() {
                     height={1000}
                   />
                 </div>
-              </div>
-              <div className="flex flex-col gap-3 lg:col-span-1">
+              </div> */}
+              {/* <div className="flex flex-col gap-3 lg:col-span-1">
                 <h1 className="text-[24px] font-semibold">
                   Simpang Raya (WIP)
                 </h1>
@@ -155,7 +168,7 @@ export default function Home() {
                     height={1000}
                   />
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>
