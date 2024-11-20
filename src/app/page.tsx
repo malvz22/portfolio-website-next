@@ -9,39 +9,41 @@ export default function Home() {
     <>
       <div className="mx-auto max-w-[1200px]">
         <section
-          id="#home-section"
-          className="h-screen flex flex-col justify-center items-center gap-20"
+          id="home-section"
+          className="h-screen flex flex-col justify-center items-center gap-20 px-5"
         >
-          <div className="flex flex-col md:flex-row gap-20">
-            <div className="bg-slate-300 rounded-full max-w-[400px] max-h-[400px] flex justify-center items-center overflow-hidden">
+          <div className="flex flex-col md:flex-row gap-7 justify-center items-center">
+            <div className="bg-slate-300 rounded-full w-[300px] h-[300px] relative flex justify-center items-center overflow-hidden">
               <Image
                 src={"/profilepic.png"}
-                width={300}
-                height={300}
+                fill
+                objectFit="cover"
                 alt="displaypicture"
               />
             </div>
-            <div className="text-start font-semibold max-w-[400px]">
-              <h1 className="text-3xl font-bold my-3">Malvin Audriansyah</h1>
+            <div className="text-center lg:text-start font-semibold max-w-[400px]">
+              <h1 className="text-3xl font-bold my-3">Malvin Audriansyah S.</h1>
               <h2 className="text-[28px] font-semibold text-[#555555] mb-4">
                 Front-End Developer
               </h2>
               <p className="mb-4">
                 Hello, I'm Malvin, some call me Malv. An aspiring Front-End
-                Developer from Jakarta, Indonesia
+                Developer from Jakarta, Indonesia.
               </p>
-              <button className="bg-[#353535] w-[8rem] text-[13px] font-semibold text-white p-4 rounded-full mb-4 cursor-pointer">
+              <button className="bg-[#353535] hover:bg-white hover:text-black border-solid border-[#353535] border-2 transition-all duration-900 w-[8rem] text-[13px] font-semibold text-white p-4 rounded-full mb-4 cursor-pointer">
                 Contact Info
               </button>
-              <div className="flex flex-row justify-start gap-4">
+              <div className="flex flex-row justify-center lg:justify-start gap-4">
                 <FaGithub size={32} />
                 <FaLinkedin size={32} />
               </div>
             </div>
           </div>
           <div className="flex flex-col md:flex-row gap-9 items-center">
-            <p className="font-bold text-[20px]">Tech Stack |</p>
-            <div className="flex flex-row gap-3">
+            <p className="font-bold text-[20px] flex flex-row gap-6">
+              Tech Stack <span className="hidden md:flex">|</span>
+            </p>
+            <div className="flex flex-row flex-wrap gap-3 justify-center">
               <Image src={"/html-5.png"} alt="html-5" width={50} height={50} />
               <Image src={"/css-3.png"} alt="css-3" width={50} height={50} />
               <Image src={"/js.png"} alt="js" width={50} height={50} />
@@ -63,8 +65,8 @@ export default function Home() {
           </div>
         </section>
         <section
-          id="#about-section"
-          className="flex flex-col items-center gap-4 py-4 mb-6 px-4"
+          id="about-section"
+          className="flex flex-col justify-center items-center gap-4 py-4 mb-6 px-4 h-screen"
         >
           <div className="flex flex-col gap-3 max-w-full">
             <h1 className="font-bold text-3xl mb-4 text-start">About Me</h1>
@@ -104,7 +106,7 @@ export default function Home() {
           </div>
         </section>
         <section
-          id="#projects-section"
+          id="projects-section"
           className="flex flex-col gap-4 py-4 mx-4"
         >
           <div className="max-w-[1200px] flex flex-col gap-3 ">
@@ -115,7 +117,7 @@ export default function Home() {
                 imgSrc="/thumbnail/thumbnail-roguepixel.png"
                 imgAlt="roguepixel"
                 bgColor="bg-[#dc2626]"
-                techs={["NextJS", "Javascript"]}
+                techs={["NextJS", "Javascript", "Tailwind"]}
                 repositoryLink="https://github.com/malvz22/RoguePixel-Company-Website"
                 websiteLink="https://roguepixel-woad.vercel.app/"
               />
@@ -124,7 +126,7 @@ export default function Home() {
                 imgSrc="/thumbnail/thumbnail-moonlit.png"
                 imgAlt="moonlit"
                 bgColor="bg-black"
-                techs={["NextJS", "Typescript"]}
+                techs={["NextJS", "Typescript", "Tailwind"]}
                 repositoryLink="https://github.com/malvz22/the-band-next"
                 websiteLink="https://moonlightsirens.vercel.app/"
               />
@@ -133,7 +135,7 @@ export default function Home() {
                 imgSrc="/thumbnail/thumbnail-sr.png"
                 imgAlt="simpang raya"
                 bgColor="bg-[#A22020]"
-                techs={["NextJS", "Typescript"]}
+                techs={["NextJS", "Typescript", "Tailwind"]}
                 repositoryLink="https://github.com/malvz22/simpang-raya"
                 websiteLink="https://simpang-raya.vercel.app/"
               />

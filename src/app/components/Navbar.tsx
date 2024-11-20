@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoClose } from "react-icons/io5";
+import Link from "next/link";
 
 export default function Navbar() {
   const [menu, setMenu] = useState(false);
@@ -15,16 +16,21 @@ export default function Navbar() {
   };
 
   return (
-    <>
-      <div className="flex flex-row text-black justify-around py-12">
+    <div className="w-full max-w-full bg-white z-50 mx-auto">
+      <div className="flex flex-row text-black justify-between max-w-[1170px] py-12 sticky top-0 mx-auto px-6">
         <h1 className="font-bold text-[24px]">Malvin A.</h1>
         <div className="hidden lg:flex flex-row gap-8">
-          <p className="cursor-pointer text-[24px]">Home</p>
-          <p className="cursor-pointer text-[24px]">About</p>
+          <Link href={"#"}>
+            <p className="cursor-pointer text-[24px]">Home</p>
+          </Link>
+          <Link href={"#about-section"}>
+            <p className="cursor-pointer text-[24px]">About</p>
+          </Link>
+
           <p className="cursor-pointer text-[24px]">Projects</p>
           <p className="cursor-pointer text-[24px]">Contact</p>
         </div>
-        <div className="flex flex-col lg:hidden relative">
+        <div className="flex flex-col lg:hidden relative transition-all duration-900">
           <div onClick={handleMenu}>
             <RxHamburgerMenu className={icon ? "hidden" : "flex"} size={34} />
             <IoClose className={icon ? "flex" : "hidden"} size={34} />
@@ -49,6 +55,6 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
