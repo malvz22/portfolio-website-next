@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaPhoneAlt } from "react-icons/fa";
+import { IoMdMail } from "react-icons/io";
 import { Javascript, Nextjs, React, Typescript } from "./components/TechLabels";
 import ProjectCard from "./components/ProjectCard";
 
@@ -107,7 +108,7 @@ export default function Home() {
         </section>
         <section
           id="projects-section"
-          className="flex flex-col gap-4 py-4 mx-4"
+          className="flex flex-col gap-4 py-4 mx-4 h-screen justify-center items-center"
         >
           <div className="max-w-[1200px] flex flex-col gap-3 ">
             <h1 className="font-bold text-3xl mb-4 text-start">Projects</h1>
@@ -139,38 +140,31 @@ export default function Home() {
                 repositoryLink="https://github.com/malvz22/simpang-raya"
                 websiteLink="https://simpang-raya.vercel.app/"
               />
-              {/* <div className="flex flex-col gap-3 col-span-1">
-                <h1 className="text-[24px] font-semibold">The Band Website</h1>
-                <div className="flex flex-row gap-2">
-                  <Nextjs />
-                  <Typescript />
-                </div>
-                <div className="rounded-xl p-3 bg-black flex-wrap max-w-full">
-                  <Image
-                    src={"/roguepixel.png"}
-                    alt="roguepixel"
-                    width={1000}
-                    height={1000}
-                  />
-                </div>
-              </div> */}
-              {/* <div className="flex flex-col gap-3 lg:col-span-1">
-                <h1 className="text-[24px] font-semibold">
-                  Simpang Raya (WIP)
-                </h1>
-                <div className="flex flex-row gap-2">
-                  <React />
-                  <Javascript />
-                </div>
-                <div className="rounded-xl p-3 bg-red-600 flex-wrap max-w-full">
-                  <Image
-                    src={"/roguepixel.png"}
-                    alt="roguepixel"
-                    width={1000}
-                    height={1000}
-                  />
-                </div>
-              </div> */}
+            </div>
+          </div>
+        </section>
+        <section
+          id="contact-section"
+          className="flex flex-col gap-4 justify-center items-center text-center"
+        >
+          <div className="px-4 py-16 gap-12 text-center justify-center flex flex-col">
+            <h1 className="font-bold text-3xl mb-4 text-center">
+              Let's Connect!
+            </h1>
+            <div className="flex flex-col">
+              <div className="flex flex-row gap-5 justify-center items-center">
+                <IoMdMail size={36} />
+                <p className="text-[36px]">malvinaudriansyah77@gmail.com</p>
+              </div>
+              <div className="flex flex-row gap-5 justify-center items-center">
+                <FaPhoneAlt size={36} />
+                <p className="text-[36px]">+62 81807218539</p>
+              </div>
+            </div>
+            <div className="flex flex-col">
+              <p className="text-[24px]">
+                You may also find me on these platforms!
+              </p>
             </div>
           </div>
         </section>

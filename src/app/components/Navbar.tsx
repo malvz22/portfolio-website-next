@@ -16,9 +16,12 @@ export default function Navbar() {
   };
 
   return (
-    <div className="w-full max-w-full bg-white z-50 mx-auto">
-      <div className="flex flex-row text-black justify-between max-w-[1170px] py-12 sticky top-0 mx-auto px-6">
-        <h1 className="font-bold text-[24px]">Malvin A.</h1>
+    <div className="w-full max-w-full bg-white z-50 mx-auto sticky top-0">
+      <div className="flex flex-row text-black justify-between max-w-[1170px] py-12 mx-auto px-6">
+        <Link href={"#"}>
+          <h1 className="font-bold text-[24px]">Malvin A.</h1>
+        </Link>
+
         <div className="hidden lg:flex flex-row gap-8">
           <Link href={"#"}>
             <p className="cursor-pointer text-[24px]">Home</p>
@@ -26,8 +29,10 @@ export default function Navbar() {
           <Link href={"#about-section"}>
             <p className="cursor-pointer text-[24px]">About</p>
           </Link>
+          <Link href={"#projects-section"}>
+            <p className="cursor-pointer text-[24px]">Projects</p>
+          </Link>
 
-          <p className="cursor-pointer text-[24px]">Projects</p>
           <p className="cursor-pointer text-[24px]">Contact</p>
         </div>
         <div className="flex flex-col lg:hidden relative transition-all duration-900">
