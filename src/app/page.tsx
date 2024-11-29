@@ -84,7 +84,7 @@ export default function Home() {
         >
           <div className="flex flex-col gap-3 max-w-full">
             <h1 className="font-bold text-3xl mb-4 text-start">About Me</h1>
-            <div className="flex flex-col md:flex-row gap-4 items-center">
+            <div className="flex flex-col lg:flex-row gap-4 items-center">
               <div className="">
                 <Image
                   src={"/laptop.jpg"}
