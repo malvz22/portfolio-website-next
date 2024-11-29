@@ -4,6 +4,7 @@ import { FaGithub, FaLinkedin, FaPhoneAlt } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { Javascript, Nextjs, React, Typescript } from "./components/TechLabels";
 import ProjectCard from "./components/ProjectCard";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -22,7 +23,7 @@ export default function Home() {
                 alt="displaypicture"
               />
             </div>
-            <div className="text-center lg:text-start font-semibold max-w-[400px]">
+            <div className="text-center md:text-start font-semibold max-w-[400px]">
               <h1 className="text-3xl font-bold my-3">Malvin Audriansyah S.</h1>
               <h2 className="text-[28px] font-semibold text-[#555555] mb-4">
                 Front-End Developer
@@ -31,12 +32,24 @@ export default function Home() {
                 Hello, I'm Malvin, some call me Malv. An aspiring Front-End
                 Developer from Jakarta, Indonesia.
               </p>
-              <button className="bg-[#353535] hover:bg-white hover:text-black border-solid border-[#353535] border-2 transition-all duration-900 w-[8rem] text-[13px] font-semibold text-white p-4 rounded-full mb-4 cursor-pointer">
-                Contact Info
-              </button>
-              <div className="flex flex-row justify-center lg:justify-start gap-4">
-                <FaGithub size={32} />
-                <FaLinkedin size={32} />
+              <Link href={"#contact-section"}>
+                <button className="bg-[#353535] hover:bg-white hover:text-black border-solid border-[#353535] border-2 transition-all duration-900 w-[8rem] text-[13px] font-semibold text-white p-4 rounded-full mb-4 cursor-pointer">
+                  Contact Info
+                </button>
+              </Link>
+
+              <div className="flex flex-row justify-center md:justify-start gap-4">
+                <Link href={"https://github.com/malvz22"} target="_blank">
+                  <FaGithub size={32} />
+                </Link>
+                <Link
+                  href={
+                    "https://www.linkedin.com/in/malvin-audriansyah-satriatama-b67909207/"
+                  }
+                  target="_blank"
+                >
+                  <FaLinkedin size={32} />
+                </Link>
               </div>
             </div>
           </div>
@@ -143,32 +156,47 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section
-          id="contact-section"
-          className="flex flex-col gap-4 justify-center items-center text-center"
-        >
-          <div className="px-4 py-16 gap-12 text-center justify-center flex flex-col">
-            <h1 className="font-bold text-3xl mb-4 text-center">
-              Let's Connect!
-            </h1>
-            <div className="flex flex-col">
-              <div className="flex flex-row gap-5 justify-center items-center">
-                <IoMdMail size={36} />
-                <p className="text-[36px]">malvinaudriansyah77@gmail.com</p>
-              </div>
-              <div className="flex flex-row gap-5 justify-center items-center">
-                <FaPhoneAlt size={36} />
-                <p className="text-[36px]">+62 81807218539</p>
-              </div>
-            </div>
-            <div className="flex flex-col">
-              <p className="text-[24px]">
-                You may also find me on these platforms!
+      </div>
+      <section
+        id="contact-section"
+        className="flex flex-col gap-4 px-6 justify-center items-center text-center bg-[#F9FAFB]"
+      >
+        <div className="px-4 py-16 gap-12 text-center justify-center flex flex-col">
+          <h1 className="font-bold text-3xl mb-4 text-center">
+            Let's Connect!
+          </h1>
+          <div className="flex flex-col">
+            <div className="flex flex-row gap-5 justify-center items-center">
+              <IoMdMail size={36} />
+              <p className="text-[28px] md:text-[36px]">
+                malvinaudriansyah77@gmail.com
               </p>
             </div>
+            <div className="flex flex-row gap-5 justify-center items-center">
+              <FaPhoneAlt size={36} />
+              <p className="text-[28px] md:text-[36px]">+62 81807218539</p>
+            </div>
           </div>
-        </section>
-      </div>
+          <div className="flex flex-col gap-2">
+            <p className="text-[24px]">
+              You may also find me on these platforms!
+            </p>
+            <div className="flex flex-row justify-center items-center gap-4">
+              <Link href={"https://github.com/malvz22"} target="_blank">
+                <FaGithub size={32} />
+              </Link>
+              <Link
+                href={
+                  "https://www.linkedin.com/in/malvin-audriansyah-satriatama-b67909207/"
+                }
+                target="_blank"
+              >
+                <FaLinkedin size={32} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

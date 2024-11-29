@@ -32,8 +32,9 @@ export default function Navbar() {
           <Link href={"#projects-section"}>
             <p className="cursor-pointer text-[24px]">Projects</p>
           </Link>
-
-          <p className="cursor-pointer text-[24px]">Contact</p>
+          <Link href={"#contact-section"}>
+            <p className="cursor-pointer text-[24px]">Contact</p>
+          </Link>
         </div>
         <div className="flex flex-col lg:hidden relative transition-all duration-900">
           <div onClick={handleMenu}>
@@ -47,16 +48,18 @@ export default function Navbar() {
                 : "hidden"
             }
           >
-            <a className="cursor-pointer text-center p-2 text-[24px]">About</a>
-            <a className="cursor-pointer text-center p-2 text-[24px]">
-              Experience
-            </a>
-            <a className="cursor-pointer text-center p-2 text-[24px]">
-              Projects
-            </a>
-            <a className="cursor-pointer text-center p-2 text-[24px]">
-              Contacts
-            </a>
+            <Link href={"#"}>
+              <p className="cursor-pointer text-[24px] text-center">Home</p>
+            </Link>
+            <Link href={"#about-section"}>
+              <p className="cursor-pointer text-[24px] text-center">About</p>
+            </Link>
+            <Link href={"#projects-section"}>
+              <p className="cursor-pointer text-[24px] text-center">Projects</p>
+            </Link>
+            <Link href={"#contact-section"}>
+              <p className="cursor-pointer text-[24px] text-center">Contact</p>
+            </Link>
           </div>
         </div>
       </div>
