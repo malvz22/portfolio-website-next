@@ -153,6 +153,15 @@ export default function Home() {
                 repositoryLink="https://github.com/malvz22/simpang-raya"
                 websiteLink="https://simpang-raya.vercel.app/"
               />
+              <ProjectCard
+                projectName="NextGen Gym"
+                imgSrc="/thumbnail/thumbnail-nextgen.png"
+                imgAlt="nextgen gym"
+                bgColor="bg-[#000000]"
+                techs={["NextJS", "Typescript", "Tailwind"]}
+                repositoryLink="https://github.com/malvz22/nextgen-gym"
+                websiteLink="https://nextgen-gym.vercel.app/"
+              />
             </div>
           </div>
         </section>
