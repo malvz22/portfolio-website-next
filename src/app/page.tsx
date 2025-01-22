@@ -6,10 +6,49 @@ import { Javascript, Nextjs, React, Typescript } from "./components/TechLabels";
 import ProjectCard from "./components/ProjectCard";
 import Link from "next/link";
 
+const Projects = [
+  {
+    name: "RoguePixel",
+    imgSrc: "/thumbnail/thumbnail-roguepixel.png",
+    imgAlt: "roguepixel",
+    bgColor: "bg-[#dc2626]",
+    techs: ["Next.js", "JavaScript", "Tailwind CSS"],
+    repositoryLink: "https://github.com/malvz22/RoguePixel-Company-Website",
+    websiteLink: "https://roguepixel-woad.vercel.app/",
+  },
+  {
+    name: "Moonlit Sirens",
+    imgSrc: "/thumbnail/thumbnail-moonlit.png",
+    imgAlt: "moonlit",
+    bgColor: "bg-black",
+    techs: ["Next.js", "TypeScript", "Tailwind CSS"],
+    repositoryLink: "https://github.com/malvz22/the-band-next",
+    websiteLink: "https://moonlightsirens.vercel.app/",
+  },
+  {
+    name: "Simpang Raya",
+    imgSrc: "/thumbnail/thumbnail-sr.png",
+    imgAlt: "simpang raya",
+    bgColor: "bg-[#A22020]",
+    techs: ["Next.js", "TypeScript", "Tailwind CSS"],
+    repositoryLink: "https://github.com/malvz22/simpang-raya",
+    websiteLink: "https://simpang-raya.vercel.app/",
+  },
+  {
+    name: "NextGen Gym",
+    imgSrc: "/thumbnail/thumbnail-nextgen.png",
+    imgAlt: "nextgen gym",
+    bgColor: "bg-[#000000]",
+    techs: ["Next.js", "TypeScript", "Tailwind CSS"],
+    repositoryLink: "https://github.com/malvz22/nextgen-gym",
+    websiteLink: "https://nextgen-gym.vercel.app/",
+  },
+];
+
 export default function Home() {
   return (
     <>
-      <div className="mx-auto max-w-[1200px]">
+      <div className="mx-auto max-w-[1200px] flex flex-col">
         <section
           id="home-section"
           className="h-screen flex flex-col justify-center items-center gap-20 px-5"
@@ -43,9 +82,7 @@ export default function Home() {
                   <FaGithub size={32} />
                 </Link>
                 <Link
-                  href={
-                    "https://www.linkedin.com/in/malvin-audriansyah-satriatama-b67909207/"
-                  }
+                  href={"https://www.linkedin.com/in/malvin-audriansyah"}
                   target="_blank"
                 >
                   <FaLinkedin size={32} />
@@ -97,11 +134,11 @@ export default function Home() {
               </div>
               <div className="max-w-full">
                 <p className="mb-3">
-                  I'm an aspiring front-end developer with a passion for
-                  creating visually appealing websites. Even though i'm still
-                  considered new for web development, i have dedicated my time
-                  to improve my skills in HTML, CSS, Javascript, and Typescript
-                  through self-learning and online course.
+                  I am a motivated front-end developer with a passion for
+                  creating visually appealing websites. While I am early in my
+                  web development, i have dedicated my time to improve my skills
+                  in HTML, CSS, JavaScript, and TypeScript through self-learning
+                  and online course.
                 </p>
                 <p className="mb-3">
                   I am also interested in responsive web design and ensuring
@@ -121,86 +158,59 @@ export default function Home() {
         </section>
         <section
           id="projects-section"
-          className="flex flex-col gap-4 py-4 mx-4 h-screen justify-center items-center"
+          className="flex flex-col gap-4 py-4 mx-4 md:h-screen justify-center items-center"
         >
           <div className="max-w-[1200px] flex flex-col gap-3 ">
             <h1 className="font-bold text-3xl mb-4 text-start">Projects</h1>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-1 justify-center gap-5">
-              <ProjectCard
-                projectName="RoguePixel"
-                imgSrc="/thumbnail/thumbnail-roguepixel.png"
-                imgAlt="roguepixel"
-                bgColor="bg-[#dc2626]"
-                techs={["NextJS", "Javascript", "Tailwind"]}
-                repositoryLink="https://github.com/malvz22/RoguePixel-Company-Website"
-                websiteLink="https://roguepixel-woad.vercel.app/"
-              />
-              <ProjectCard
-                projectName="The Band Website"
-                imgSrc="/thumbnail/thumbnail-moonlit.png"
-                imgAlt="moonlit"
-                bgColor="bg-black"
-                techs={["NextJS", "Typescript", "Tailwind"]}
-                repositoryLink="https://github.com/malvz22/the-band-next"
-                websiteLink="https://moonlightsirens.vercel.app/"
-              />
-              <ProjectCard
-                projectName="Simpang Raya"
-                imgSrc="/thumbnail/thumbnail-sr.png"
-                imgAlt="simpang raya"
-                bgColor="bg-[#A22020]"
-                techs={["NextJS", "Typescript", "Tailwind"]}
-                repositoryLink="https://github.com/malvz22/simpang-raya"
-                websiteLink="https://simpang-raya.vercel.app/"
-              />
-              <ProjectCard
-                projectName="NextGen Gym"
-                imgSrc="/thumbnail/thumbnail-nextgen.png"
-                imgAlt="nextgen gym"
-                bgColor="bg-[#000000]"
-                techs={["NextJS", "Typescript", "Tailwind"]}
-                repositoryLink="https://github.com/malvz22/nextgen-gym"
-                websiteLink="https://nextgen-gym.vercel.app/"
-              />
+              {Projects.map((project, index) => (
+                <div key={index}>
+                  <ProjectCard
+                    projectName={project.name}
+                    imgSrc={project.imgSrc}
+                    imgAlt={project.imgAlt}
+                    bgColor={project.bgColor}
+                    techs={project.techs}
+                    repositoryLink={project.repositoryLink}
+                    websiteLink={project.websiteLink}
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </section>
       </div>
       <section
         id="contact-section"
-        className="flex flex-col gap-4 px-6 justify-center items-center text-center bg-[#F9FAFB]"
+        className="flex flex-col gap-4 px-6 justify-center items-center text-center h-auto bg-[#F9FAFB]"
       >
         <div className="px-4 py-16 gap-12 text-center justify-center flex flex-col">
-          <h1 className="font-bold text-3xl mb-4 text-center">
+          <h1 className="font-bold text-2xl md:text-3xl mb-4 text-center">
             Let's Connect!
           </h1>
           <div className="flex flex-col">
-            <div className="flex flex-row gap-5 justify-center items-center">
-              <IoMdMail size={36} />
-              <p className="text-[28px] md:text-[36px]">
-                malvinaudriansyah77@gmail.com
-              </p>
+            <div className="flex flex-row gap-3 justify-center items-center text-[18px] md:text-[36px]">
+              <IoMdMail />
+              <p className="">malvinaudriansyah@gmail.com</p>
             </div>
-            <div className="flex flex-row gap-5 justify-center items-center">
-              <FaPhoneAlt size={36} />
-              <p className="text-[28px] md:text-[36px]">+62 81807218539</p>
+            <div className="flex flex-row gap-3 justify-center items-center text-[18px] md:text-[36px]">
+              <FaPhoneAlt />
+              <p className="">+62 81807218539</p>
             </div>
           </div>
           <div className="flex flex-col gap-2">
-            <p className="text-[24px]">
+            <p className="text-[18px] md:text-[36px]">
               You may also find me on these platforms!
             </p>
-            <div className="flex flex-row justify-center items-center gap-4">
+            <div className="flex flex-row justify-center items-center gap-4 text-[18px] md:text-[36px]">
               <Link href={"https://github.com/malvz22"} target="_blank">
-                <FaGithub size={32} />
+                <FaGithub />
               </Link>
               <Link
-                href={
-                  "https://www.linkedin.com/in/malvin-audriansyah-satriatama-b67909207/"
-                }
+                href={"https://www.linkedin.com/in/malvin-audriansyah"}
                 target="_blank"
               >
-                <FaLinkedin size={32} />
+                <FaLinkedin />
               </Link>
             </div>
           </div>
