@@ -68,8 +68,7 @@ export default function Home() {
                 Front-End Developer
               </h2>
               <p className="mb-4">
-                Hello, I'm Malvin, some call me Malv. An aspiring Front-End
-                Developer from Jakarta, Indonesia.
+                Hello, I'm Malvin. Front-End Developer from Jakarta, Indonesia.
               </p>
               <Link href={"#contact-section"}>
                 <button className="bg-[#353535] hover:bg-white hover:text-black border-solid border-[#353535] border-2 transition-all duration-900 w-[8rem] text-[13px] font-semibold text-white p-4 rounded-full mb-4 cursor-pointer">
@@ -188,12 +187,12 @@ export default function Home() {
           <h1 className="font-bold text-2xl md:text-3xl mb-4 text-center">
             Let's Connect!
           </h1>
-          <div className="flex flex-col">
-            <div className="flex flex-row gap-3 justify-center items-center text-[18px] md:text-[36px]">
+          <div className="flex flex-col gap-4">
+            <div className="flex flex-col sm:flex-row gap-1 sm:gap-3 justify-center items-center text-[14px] sm:text-[24px] md:text-[36px]">
               <IoMdMail />
               <p className="">malvinaudriansyah@gmail.com</p>
             </div>
-            <div className="flex flex-row gap-3 justify-center items-center text-[18px] md:text-[36px]">
+            <div className="flex flex-col sm:flex-row gap-1 sm:gap-3 justify-center items-center text-[14px] sm:text-[24px] md:text-[36px]">
               <FaPhoneAlt />
               <p className="">+62 81807218539</p>
             </div>

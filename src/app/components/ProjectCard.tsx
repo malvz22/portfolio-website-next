@@ -29,7 +29,7 @@ const ProjectCard = ({
     <>
       <div className="flex flex-col gap-3 col-span-1">
         <h1 className="text-[24px] font-semibold">{projectName}</h1>
-        <div className="flex flex-row gap-4">
+        <div className="flex flex-row flex-wrap sm:flex-nowrap gap-2">
           {techs.map((value, i) => {
             return (
               <p
