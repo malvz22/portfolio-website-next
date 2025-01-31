@@ -9,7 +9,7 @@ import Link from "next/link";
 const Projects = [
   {
     name: "RoguePixel",
-    imgSrc: "/thumbnail/thumbnail-roguepixel.png",
+    imgSrc: "/thumbnail/thumbnail-roguepixel.webp",
     imgAlt: "roguepixel",
     bgColor: "bg-[#dc2626]",
     techs: ["Next.js", "JavaScript", "Tailwind CSS"],
@@ -18,7 +18,7 @@ const Projects = [
   },
   {
     name: "Moonlit Sirens",
-    imgSrc: "/thumbnail/thumbnail-moonlit.png",
+    imgSrc: "/thumbnail/thumbnail-moonlit.webp",
     imgAlt: "moonlit",
     bgColor: "bg-black",
     techs: ["Next.js", "TypeScript", "Tailwind CSS"],
@@ -27,7 +27,7 @@ const Projects = [
   },
   {
     name: "Simpang Raya",
-    imgSrc: "/thumbnail/thumbnail-sr.png",
+    imgSrc: "/thumbnail/thumbnail-sr.webp",
     imgAlt: "simpang raya",
     bgColor: "bg-[#A22020]",
     techs: ["Next.js", "TypeScript", "Tailwind CSS"],
@@ -36,12 +36,21 @@ const Projects = [
   },
   {
     name: "NextGen Gym",
-    imgSrc: "/thumbnail/thumbnail-nextgen.png",
+    imgSrc: "/thumbnail/thumbnail-nextgen.webp",
     imgAlt: "nextgen gym",
     bgColor: "bg-[#000000]",
     techs: ["Next.js", "TypeScript", "Tailwind CSS"],
     repositoryLink: "https://github.com/malvz22/nextgen-gym",
     websiteLink: "https://nextgen-gym.vercel.app/",
+  },
+  {
+    name: "Otaku Vault",
+    imgSrc: "/thumbnail/thumbnail-otaku-vault.webp",
+    imgAlt: "otaku vault",
+    bgColor: "bg-[#1E90FF]",
+    techs: ["Next.js", "TypeScript", "Tailwind CSS"],
+    repositoryLink: "https://github.com/malvz22/otaku-vault",
+    websiteLink: "https://otaku-vault.vercel.app/",
   },
 ];
 
