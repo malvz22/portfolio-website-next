@@ -42,7 +42,13 @@ const ProjectCard = ({
           })}
         </div>
         <div className={`rounded-xl p-3 flex-wrap max-w-full ${bgColor}`}>
-          <Image src={imgSrc} alt={imgAlt} width={1000} height={1000} />
+          <Image
+            src={imgSrc}
+            alt={imgAlt}
+            width={1000}
+            height={1000}
+            priority={false}
+          />
         </div>
         <div className="flex flex-row gap-3 ps-2 text-[14px] font-medium">
           <Link target="_blank" href={`${repositoryLink}`}>

@@ -7,3 +7,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.grid-item:nth-last-child(1):nth:child(3n + 1),
+.grid-item:nth-last-child(2):nth-child(3n + 1) {
+    justify-self: center;
+}
+
+.grid-item:nth-last-child(1):nth:child(3n + 2) {
+    justify-self:start;
+}

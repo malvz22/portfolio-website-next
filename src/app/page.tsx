@@ -5,6 +5,7 @@ import { IoMdMail } from "react-icons/io";
 import { Javascript, Nextjs, React, Typescript } from "./components/TechLabels";
 import ProjectCard from "./components/ProjectCard";
 import Link from "next/link";
+import DisplayProjects from "./components/DisplayProjects";
 
 const Projects = [
   {
@@ -52,6 +53,15 @@ const Projects = [
     repositoryLink: "https://github.com/malvz22/otaku-vault",
     websiteLink: "https://otaku-vault.vercel.app/",
   },
+  {
+    name: "Spoon & Fork",
+    imgSrc: "/thumbnail/thumbnail-spoon-and-fork.webp",
+    imgAlt: "spoon & fork",
+    bgColor: "bg-[#F15025]",
+    techs: ["Next.js", "TypeScript", "Tailwind CSS"],
+    repositoryLink: "https://github.com/malvz22/spoon-and-fork",
+    websiteLink: "https://spoon-and-fork-ebon.vercel.app",
+  },
 ];
 
 export default function Home() {
@@ -62,16 +72,18 @@ export default function Home() {
           id="home-section"
           className="h-screen flex flex-col justify-center items-center gap-20 px-5"
         >
-          <div className="flex flex-col md:flex-row gap-7 justify-center items-center">
-            <div className="bg-slate-300 rounded-full w-[300px] h-[300px] relative flex justify-center items-center overflow-hidden">
+          <div className="flex flex-col w-full max-w-full md:flex-row gap-7 justify-center items-center">
+            <div className="bg-slate-300 rounded-full w-full max-w-[300px] aspect-square relative flex justify-center items-center overflow-hidden">
               <Image
                 src={"/profilepic.png"}
                 fill
-                objectFit="cover"
+                style={{ objectFit: "cover" }}
                 alt="displaypicture"
+                priority={true}
+                sizes="100%"
               />
             </div>
-            <div className="text-center md:text-start font-semibold max-w-[400px]">
+            <div className="text-center md:text-start font-semibold max-w-[600px]">
               <h1 className="text-3xl font-bold my-3">Malvin Audriansyah S.</h1>
               <h2 className="text-[28px] font-semibold text-[#555555] mb-4">
                 Front-End Developer
@@ -136,8 +148,9 @@ export default function Home() {
                   alt="laptop"
                   width={1400}
                   height={0}
+                  style={{ objectFit: "cover" }}
                   className="rounded-lg"
-                  layout="intrinsic"
+                  priority={false}
                 />
               </div>
               <div className="max-w-full">
@@ -169,22 +182,7 @@ export default function Home() {
           className="flex flex-col gap-4 py-4 mx-4 md:h-screen justify-center items-center"
         >
           <div className="max-w-[1200px] flex flex-col gap-3 ">
-            <h1 className="font-bold text-3xl mb-4 text-start">Projects</h1>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-1 justify-center gap-5">
-              {Projects.map((project, index) => (
-                <div key={index}>
-                  <ProjectCard
-                    projectName={project.name}
-                    imgSrc={project.imgSrc}
-                    imgAlt={project.imgAlt}
-                    bgColor={project.bgColor}
-                    techs={project.techs}
-                    repositoryLink={project.repositoryLink}
-                    websiteLink={project.websiteLink}
-                  />
-                </div>
-              ))}
-            </div>
+            <DisplayProjects />
           </div>
         </section>
       </div>
