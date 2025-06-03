@@ -38,7 +38,7 @@ const Projects = [
     websiteLink: "https://nextgen-gym.vercel.app/",
   },
   {
-    name: "Otaku Vault",
+    name: "OtakuVault",
     imgSrc: "/thumbnail/thumbnail-otaku-vault.webp",
     imgAlt: "otaku vault",
     bgColor: "bg-[#1E90FF]",
