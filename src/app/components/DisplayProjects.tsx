@@ -55,6 +55,15 @@ const Projects = [
     repositoryLink: "https://github.com/malvz22/spoon-and-fork",
     websiteLink: "https://spoon-and-fork-ebon.vercel.app",
   },
+  {
+    name: "Tenplus",
+    imgSrc: "/thumbnail/thumbnail-tenplus.webp",
+    imgAlt: "tenplus thumbnail",
+    bgColor: "bg-[#e1e43d]",
+    techs: ["React.js", "JavaScript", "Tailwind CSS"],
+    repositoryLink: "https://github.com/malvz22/tenplus-landing-page",
+    websiteLink: "https://tenplus-seven.vercel.app/",
+  },
 ];
 
 const DisplayProjects = () => {
