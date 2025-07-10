@@ -70,7 +70,7 @@ export default function Home() {
       <div className="mx-auto max-w-[1200px] flex flex-col">
         <section
           id="home-section"
-          className="h-screen flex flex-col justify-center items-center gap-20 px-5"
+          className="md:h-screen flex flex-col justify-center items-center gap-20 px-5"
         >
           <div className="flex flex-col w-full max-w-full md:flex-row gap-7 justify-center items-center">
             <div className="bg-slate-300 rounded-full w-full max-w-[300px] aspect-square relative flex justify-center items-center overflow-hidden">
@@ -137,41 +137,43 @@ export default function Home() {
         </section>
         <section
           id="about-section"
-          className="flex flex-col justify-center items-center gap-4 py-4 mb-6 px-4 h-screen"
+          className="flex flex-col justify-center items-center gap-4 py-4 mb-6 px-4"
         >
           <div className="flex flex-col gap-3 max-w-full">
             <h1 className="font-bold text-3xl mb-4 text-start">About Me</h1>
-            <div className="flex flex-col lg:flex-row gap-4 items-center">
-              <div className="">
+            <div className="flex flex-col md:flex-row gap-4 items-center w-full max-w-full">
+              <div className="aspect-square w-full max-w-full md:max-w-[50%] relative">
                 <Image
                   src={"/laptop.jpg"}
                   alt="laptop"
-                  width={1400}
-                  height={0}
+                  fill
                   style={{ objectFit: "cover" }}
-                  className="rounded-lg"
+                  className="rounded-xl shadow-md"
                   priority={false}
                 />
               </div>
-              <div className="max-w-full">
+              <div className="max-w-full md:max-w-[50%] text-start text-sm md:text-base lg:text-lg ">
                 <p className="mb-3">
-                  I am a motivated front-end developer with a passion for
-                  creating visually appealing websites. While I am early in my
-                  web development, i have dedicated my time to improve my skills
-                  in HTML, CSS, JavaScript, and TypeScript through self-learning
-                  and online course.
+                  I'm a motivated front-end developer with a passion for
+                  crafting visually engaging and user-friendly websites. While
+                  I'm early in my web development journey, I've been actively
+                  building my skills through self-learning and personal
+                  projects. Through building personal projects, I've leaned to
+                  translate designs into modular, maintainable code.
                 </p>
                 <p className="mb-3">
-                  I am also interested in responsive web design and ensuring
-                  that websites provides a seamless User Experience across
-                  devices. I have also explored popular frameworks and libraries
-                  such as React.js, Next.js, Bootstrap, Tailwind, and Chakra.
+                  My core technical skills include HTML, CSS, JavaScript, and
+                  TypeScript. I'm particularly interested in responsive web
+                  designs and ensuring seamless user experience across devices.
+                  I've also explored popular tools and frameworks such as
+                  React.js, Next.js, Tailwind CSS, Bootstrap, and Chakra UI.
                 </p>
                 <p>
-                  I am eager to seek opportunity for bringing fresh ideas and a
-                  strong work ethic to a forward-thinking company. I look
-                  forward to collaborating with others who share my passion for
-                  technology and innovation
+                  I'm now seeking opportunities where I can contribute fresh
+                  ideas, collaborate with like-minded developers, and continue
+                  growing in a forward-thinking environment. I'm excited to
+                  bring my creativity, discipline, and enthusiasm for technology
+                  to a real-world team.
                 </p>
               </div>
             </div>
@@ -185,42 +187,6 @@ export default function Home() {
             <DisplayProjects />
           </div>
         </section>
-        {/* <section
-          id="contact-section"
-          className="flex flex-col gap-4 px-6 justify-center items-center text-center bg-[#F9FAFB]"
-        >
-          <div className="px-4 py-16 gap-12 text-center justify-center flex flex-col">
-            <h1 className="font-bold text-2xl md:text-3xl mb-4 text-center">
-              Let's Connect!
-            </h1>
-            <div className="flex flex-col gap-4">
-              <div className="flex flex-col sm:flex-row gap-1 sm:gap-3 justify-center items-center text-[14px] sm:text-[24px] md:text-[36px]">
-                <IoMdMail />
-                <p className="">malvinaudriansyah@gmail.com</p>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-1 sm:gap-3 justify-center items-center text-[14px] sm:text-[24px] md:text-[36px]">
-                <FaPhoneAlt />
-                <p className="">+62 81807218539</p>
-              </div>
-            </div>
-            <div className="flex flex-col gap-2">
-              <p className="text-[18px] md:text-[36px]">
-                You may also find me on these platforms!
-              </p>
-              <div className="flex flex-row justify-center items-center gap-4 text-[18px] md:text-[36px]">
-                <Link href={"https://github.com/malvz22"} target="_blank">
-                  <FaGithub />
-                </Link>
-                <Link
-                  href={"https://www.linkedin.com/in/malvin-audriansyah"}
-                  target="_blank"
-                >
-                  <FaLinkedin />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section> */}
       </div>
     </>
   );

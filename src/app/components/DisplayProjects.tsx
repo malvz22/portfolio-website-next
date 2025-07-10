@@ -67,11 +67,13 @@ const Projects = [
 ];
 
 const DisplayProjects = () => {
+  const sortedProjects = [...Projects].reverse();
+
   return (
     <div className="w-full max-w-full">
       <h1 className="font-bold text-3xl mb-4 text-start">Projects</h1>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-        {Projects.map((project, index) => (
+        {sortedProjects.map((project, index) => (
           <div key={index}>
             <ProjectCard
               projectName={project.name}
