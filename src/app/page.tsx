@@ -6,6 +6,7 @@ import { Javascript, Nextjs, React, Typescript } from "./components/TechLabels";
 import ProjectCard from "./components/ProjectCard";
 import Link from "next/link";
 import DisplayProjects from "./components/DisplayProjects";
+import Heading from "./components/Heading";
 
 export default function Home() {
   return (
@@ -65,10 +66,10 @@ export default function Home() {
         </section>
         <section
           id="about-section"
-          className="flex flex-col justify-center items-center gap-4 py-4 mb-6 px-4"
+          className="flex flex-col items-start gap-4 py-4 mb-6 px-4"
         >
           <div className="flex flex-col gap-3 max-w-full">
-            <h1 className="font-bold text-3xl mb-4 text-start">About Me</h1>
+            <Heading title="About Me" />
             <div className="flex flex-col md:flex-row gap-4 items-center w-full max-w-full">
               <div className="w-full max-w-full text-start text-sm md:text-base lg:text-lg ">
                 <p className="mb-3">
@@ -97,9 +98,7 @@ export default function Home() {
             </div>
           </div>
           <div className="flex flex-col gap-3 max-w-full">
-            <h1 className="font-bold text-3xl mb-4 text-start">
-              Skills & Tech
-            </h1>
+            <Heading title="Skills & Tech" />
             {/* <div className="flex flex-col md:flex-row gap-4 items-center w-full max-w-full">
               <div className="w-full max-w-full text-start text-sm md:text-base lg:text-lg ">
                 <p className="mb-3">
@@ -154,8 +153,9 @@ export default function Home() {
         </section>
         <section
           id="projects-section"
-          className="flex flex-col gap-4 py-4 mx-4 justify-center items-center"
+          className="flex flex-col gap-4 py-4 mx-4 justify-center items-start"
         >
+          <Heading title="Portfolio" />
           <div className="max-w-[1200px] flex flex-col gap-3 ">
             <DisplayProjects />
           </div>
