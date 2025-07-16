@@ -17,7 +17,7 @@ export default function Navbar() {
 
   return (
     <div className="w-full max-w-full bg-white z-50 mx-auto sticky top-0">
-      <div className="flex flex-row text-black justify-between max-w-[1170px] py-6 mx-auto px-6">
+      <div className="flex flex-row text-black justify-between max-w-[1200px] py-6 mx-auto px-6">
         <Link href={"#"}>
           <h1 className="font-bold text-[24px]">Malvin A.</h1>
         </Link>
