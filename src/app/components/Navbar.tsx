@@ -16,7 +16,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="w-full max-w-full p-8 z-50 mx-auto sticky top-0">
+    <div className="w-full max-w-full p-8 z-50 mx-auto fixed top-0">
       <div className="flex flex-row bg-white/10 backdrop-blur-md border border-white/20 rounded-full shadow-md items-center text-black justify-between max-w-[1200px] py-6 mx-auto px-6">
         <Link href={"#"}>
           <h1 className="font-bold text-[24px]">Malvin A.</h1>
@@ -24,18 +24,24 @@ export default function Navbar() {
 
         <div className="hidden lg:flex flex-row items-center gap-8">
           <Link href={"#"}>
-            <p className="cursor-pointer text-[18px]">Home</p>
+            <p className="cursor-pointer text-[18px] hover:text-primary transition-colors duration-300">
+              Home
+            </p>
           </Link>
           <Link href={"#about-section"}>
-            <p className="cursor-pointer text-[18px]">About</p>
+            <p className="cursor-pointer text-[18px] hover:text-primary transition-colors duration-300">
+              About
+            </p>
           </Link>
           <Link href={"#projects-section"}>
-            <p className="cursor-pointer text-[18px]">Projects</p>
+            <p className="cursor-pointer text-[18px] hover:text-primary transition-colors duration-300">
+              Portfolio
+            </p>
           </Link>
         </div>
         <div className="hidden lg:flex flex-row">
           <Link href={"#contact-section"}>
-            <button className="cursor-pointer text-[18px] text-white font-semibold rounded-full px-5 py-2 bg-primary">
+            <button className="cursor-pointer text-[18px] text-white font-semibold rounded-full px-5 py-2 bg-primary hover:bg-hover transition-all duration-300">
               Contact
             </button>
           </Link>

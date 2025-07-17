@@ -34,21 +34,16 @@ export default function Home() {
                   Malvin Audriansyah
                 </span>
               </h1>
-              <h2 className="text-[28px] font-semibold text-[#555555] mb-4">
+              <h2 className="text-[24px] font-semibold text-[#555555] mb-4">
                 Front-End Developer
               </h2>
               <p className="mb-4 font-normal text-lg">
-                I'm a front-end developer passionate about building clean,
-                responsive, and user-friendly websites. Skilled in HTML, CSS,
-                JavaScript, TypeScript, React.js, Next.js, and Tailwind CSS. I’m
-                eager to contribute to meaningful, modern web experiences in a
-                dynamic and creative environment!
+                I'm passionate about building clean, responsive, and
+                user-friendly websites. Skilled in HTML, CSS, JavaScript,
+                TypeScript, React.js, Next.js, and Tailwind CSS. I’m eager to
+                contribute to meaningful, modern web experiences in a dynamic
+                and creative environment!
               </p>
-              <Link href={"#contact-section"}>
-                <button className="bg-[#353535] hover:bg-white hover:text-black border-solid border-[#353535] border-2 transition-all duration-900 w-[8rem] text-[13px] font-semibold text-white p-4 rounded-full mb-4 cursor-pointer">
-                  Contact Info
-                </button>
-              </Link>
 
               <div className="flex flex-row justify-center md:justify-start gap-4">
                 <Link href={"https://github.com/malvz22"} target="_blank">
@@ -66,10 +61,10 @@ export default function Home() {
         </section>
         <section
           id="about-section"
-          className="flex flex-col items-start gap-4 py-4 mb-6 px-4"
+          className="flex flex-col items-start gap-4 py-4 mb-6 px-4 scroll-mt-36"
         >
           <div className="flex flex-col gap-3 max-w-full">
-            <Heading title="About Me" />
+            <Heading centered={false} title="About Me" />
             <div className="flex flex-col md:flex-row gap-4 items-center w-full max-w-full">
               <div className="w-full max-w-full text-start text-sm md:text-base lg:text-lg ">
                 <p className="mb-3">
@@ -98,7 +93,7 @@ export default function Home() {
             </div>
           </div>
           <div className="flex flex-col gap-3 max-w-full">
-            <Heading title="Skills & Tech" />
+            <Heading title="Skills & Tech" centered={false} />
             {/* <div className="flex flex-col md:flex-row gap-4 items-center w-full max-w-full">
               <div className="w-full max-w-full text-start text-sm md:text-base lg:text-lg ">
                 <p className="mb-3">
@@ -153,10 +148,10 @@ export default function Home() {
         </section>
         <section
           id="projects-section"
-          className="flex flex-col gap-4 py-4 mx-4 justify-center items-start"
+          className="flex flex-col gap-4 py-4 mx-4 justify-center items-center scroll-mt-36 pb-12"
         >
-          <Heading title="Portfolio" />
-          <div className="max-w-[1200px] flex flex-col gap-3 ">
+          <Heading centered={true} title="Portfolio" />
+          <div className="w-full max-w-[1100px] mx-auto px-4">
             <DisplayProjects />
           </div>
         </section>
