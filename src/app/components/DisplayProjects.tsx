@@ -1,4 +1,12 @@
+"use client";
+
 import ProjectCard from "./ProjectCard";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { MouseEventHandler } from "react";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import next from "next";
 
 const Projects = [
   {
@@ -66,15 +74,55 @@ const Projects = [
   },
 ];
 
+const NextArrow = ({ onClick }: { onClick?: MouseEventHandler }) => {
+  return (
+    <div
+      className="absolute -right-10 top-1/2 transform -translate-y-1/2 z-10 p-2 cursor-pointer text-gray-500 text-[32px] hover:text-primary tramsition-colors duration-300"
+      onClick={onClick}
+    >
+      <IoIosArrowForward />
+    </div>
+  );
+};
+
+const PrevArrow = ({ onClick }: { onClick?: MouseEventHandler }) => {
+  return (
+    <div
+      className="absolute -left-10 top-1/2 transform -translate-y-1/2 z-10 p-2 cursor-pointer text-gray-500 text-[32px] hover:text-primary tramsition-colors duration-300"
+      onClick={onClick}
+    >
+      <IoIosArrowBack />
+    </div>
+  );
+};
+
 const DisplayProjects = () => {
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   const sortedProjects = [...Projects].reverse();
 
   return (
-    <div className="w-full max-w-full">
-      <h1 className="font-bold text-3xl mb-4 text-start">Projects</h1>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+    <div className="w-full max-w-full mx-auto relative">
+      <Slider {...settings}>
         {sortedProjects.map((project, index) => (
-          <div key={index}>
+          <div key={index} className="px-4 w-full">
             <ProjectCard
               projectName={project.name}
               imgSrc={project.imgSrc}
@@ -86,7 +134,7 @@ const DisplayProjects = () => {
             />
           </div>
         ))}
-      </div>
+      </Slider>
     </div>
   );
 };
