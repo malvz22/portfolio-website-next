@@ -77,7 +77,7 @@ const Projects = [
 const NextArrow = ({ onClick }: { onClick?: MouseEventHandler }) => {
   return (
     <div
-      className="absolute -right-10 top-1/2 transform -translate-y-1/2 z-10 p-2 cursor-pointer text-gray-500 text-[32px]"
+      className="absolute -right-10 top-1/2 transform -translate-y-1/2 z-10 p-2 cursor-pointer text-gray-500 text-[32px] hover:text-primary tramsition-colors duration-300"
       onClick={onClick}
     >
       <IoIosArrowForward />
@@ -88,7 +88,7 @@ const NextArrow = ({ onClick }: { onClick?: MouseEventHandler }) => {
 const PrevArrow = ({ onClick }: { onClick?: MouseEventHandler }) => {
   return (
     <div
-      className="absolute -left-10 top-1/2 transform -translate-y-1/2 z-10 p-2 cursor-pointer text-gray-500 text-[32px]"
+      className="absolute -left-10 top-1/2 transform -translate-y-1/2 z-10 p-2 cursor-pointer text-gray-500 text-[32px] hover:text-primary tramsition-colors duration-300"
       onClick={onClick}
     >
       <IoIosArrowBack />

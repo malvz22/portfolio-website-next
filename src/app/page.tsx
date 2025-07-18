@@ -151,7 +151,7 @@ export default function Home() {
           className="flex flex-col gap-4 py-4 mx-4 justify-center items-center scroll-mt-36 pb-12"
         >
           <Heading centered={true} title="Portfolio" />
-          <div className="w-full max-w-[1100px] mx-auto px-4">
+          <div className="w-full max-w-full mx-auto px-4">
             <DisplayProjects />
           </div>
         </section>
