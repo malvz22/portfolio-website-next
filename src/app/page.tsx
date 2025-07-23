@@ -8,6 +8,45 @@ import Link from "next/link";
 import DisplayProjects from "./components/DisplayProjects";
 import Heading from "./components/Heading";
 
+const skills = [
+  {
+    name: "HTML",
+    icon: "/html-5.png",
+  },
+  {
+    name: "CSS",
+    icon: "/css-3.png",
+  },
+  {
+    name: "JavaScript",
+    icon: "/js.png",
+  },
+  {
+    name: "TypeScript",
+    icon: "/ts-logo-512.png",
+  },
+  {
+    name: "React.js",
+    icon: "/react.png",
+  },
+  {
+    name: "Next.js",
+    icon: "/nextjs-icon-light-background.png",
+  },
+  {
+    name: "Tailwind CSS",
+    icon: "/tailwind.svg",
+  },
+  {
+    name: "Git",
+    icon: "/git.png",
+  },
+  {
+    name: "Figma",
+    icon: "/figma.png",
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -92,40 +131,34 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-3 max-w-full">
-            <Heading title="Skills & Tech" centered={false} />
-            <div className="flex flex-col md:flex-row gap-9 items-center">
-              <p className="font-bold text-[20px] flex flex-row gap-6">
+          <div className="flex flex-col gap-3 w-full max-w-full">
+            <Heading title="Skills & Tech" centered={true} />
+            <p className="text-sm md:text-base lg:text-lg mb-3 text-center">
+              I work with a variety of tools to bring modern websites to life:
+            </p>
+
+            <div className="flex flex-col md:flex-row gap-9 items-center mx-auto w-full max-w-full">
+              {/* <p className="font-bold text-[20px] flex flex-row gap-6">
                 Tech Stack <span className="hidden md:flex">|</span>
-              </p>
-              <div className="flex flex-row flex-wrap gap-3 justify-center">
-                <Image
-                  src={"/html-5.png"}
-                  alt="html-5"
-                  width={50}
-                  height={50}
-                />
-                <Image src={"/css-3.png"} alt="css-3" width={50} height={50} />
-                <Image src={"/js.png"} alt="js" width={50} height={50} />
-                <Image
-                  src={"/ts-logo-512.png"}
-                  alt="ts"
-                  width={50}
-                  height={50}
-                />
-                <Image src={"/react.png"} alt="react" width={50} height={50} />
-                <Image
-                  src={"/nextjs-icon-light-background.png"}
-                  alt="nextjs"
-                  width={50}
-                  height={50}
-                />
-                <Image
-                  src={"/tailwind.svg"}
-                  alt="tailwind"
-                  width={50}
-                  height={50}
-                />
+              </p> */}
+              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 text-center mx-auto w-full max-w-full justify-items-center">
+                {skills.map((skill, index) => (
+                  <div
+                    key={index}
+                    className="flex flex-col text-center items-center gap-3"
+                  >
+                    <div className="w-[50px] h-[50px] relative aspect-square">
+                      {/* Using Image component for better performance */}
+                      <Image
+                        src={`${skill.icon}`}
+                        alt={`${skill.name}`}
+                        fill
+                        objectFit="contain"
+                      />
+                    </div>
+                    <p>{skill.name}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
