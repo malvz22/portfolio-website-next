@@ -8,6 +8,14 @@ import Link from "next/link";
 import DisplayProjects from "./components/DisplayProjects";
 import Heading from "./components/Heading";
 
+interface Skill {
+  category: string;
+  skills: {
+    name: string;
+    icon: string;
+  }[];
+}
+
 const skills = [
   {
     name: "HTML",
@@ -44,6 +52,48 @@ const skills = [
   {
     name: "Figma",
     icon: "/figma.png",
+  },
+];
+
+const categorizedSkills = [
+  {
+    category: "Languages",
+    skills: [
+      { name: "HTML", icon: "/html-5.png" },
+      { name: "CSS", icon: "/css-3.png" },
+      { name: "JavaScript", icon: "/js.png" },
+      { name: "TypeScript", icon: "/ts-logo-512.png" },
+    ],
+  },
+  {
+    category: "Frameworks & Libraries",
+    skills: [
+      {
+        name: "React.js",
+        icon: "/react.png",
+      },
+      {
+        name: "Next.js",
+        icon: "/nextjs-icon-light-background.png",
+      },
+      {
+        name: "Tailwind CSS",
+        icon: "/tailwind.svg",
+      },
+    ],
+  },
+  {
+    category: "Tools",
+    skills: [
+      {
+        name: "Git",
+        icon: "/git.png",
+      },
+      {
+        name: "VS Code",
+        icon: "/vscode.png",
+      },
+    ],
   },
 ];
 
@@ -103,7 +153,7 @@ export default function Home() {
           className="flex flex-col items-start gap-4 py-4 mb-6 px-4 scroll-mt-36"
         >
           <div className="flex flex-col gap-3 max-w-full">
-            <Heading centered={false} title="About Me" />
+            <Heading centered={true} title="About Me" />
             <div className="flex flex-col md:flex-row gap-4 items-center w-full max-w-full">
               <div className="w-full max-w-full text-start text-sm md:text-base lg:text-lg ">
                 <p className="mb-3">
@@ -137,29 +187,32 @@ export default function Home() {
               I work with a variety of tools to bring modern websites to life:
             </p>
 
-            <div className="flex flex-col md:flex-row gap-9 items-center mx-auto w-full max-w-full">
-              {/* <p className="font-bold text-[20px] flex flex-row gap-6">
-                Tech Stack <span className="hidden md:flex">|</span>
-              </p> */}
-              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 text-center mx-auto w-full max-w-full justify-items-center">
-                {skills.map((skill, index) => (
-                  <div
-                    key={index}
-                    className="flex flex-col text-center items-center gap-3"
-                  >
-                    <div className="w-[50px] h-[50px] relative aspect-square">
-                      {/* Using Image component for better performance */}
-                      <Image
-                        src={`${skill.icon}`}
-                        alt={`${skill.name}`}
-                        fill
-                        objectFit="contain"
-                      />
-                    </div>
-                    <p>{skill.name}</p>
+            <div className="flex flex-col w-full max-w-full gap-3 justify-center items-center text-center">
+              {categorizedSkills.map((category, index) => (
+                <div key={index} className="flex flex-col gap-3">
+                  <h3 className="text-lg font-semibold">{category.category}</h3>
+                  <div className="flex flex-row flex-wrap md:flex-nowrap gap-4 justify-center items-center">
+                    {category.skills.map((skills, skillsIndex) => (
+                      <div
+                        key={skillsIndex}
+                        className="flex flex-row gap-4 items-center justify-center w-[120px] h-[120px]"
+                      >
+                        <div className="flex flex-col items-center gap-3">
+                          <div className="w-[70px] h-[70px] relative aspect-square">
+                            <Image
+                              src={skills.icon}
+                              alt={skills.name}
+                              fill
+                              objectFit="contain"
+                            />
+                          </div>
+                          <p>{skills.name}</p>
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
