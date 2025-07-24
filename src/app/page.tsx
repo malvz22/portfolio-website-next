@@ -203,7 +203,8 @@ export default function Home() {
                               src={skills.icon}
                               alt={skills.name}
                               fill
-                              objectFit="contain"
+                              style={{ objectFit: "contain" }}
+                              sizes="100%"
                             />
                           </div>
                           <p>{skills.name}</p>
@@ -218,7 +219,7 @@ export default function Home() {
         </section>
         <section
           id="projects-section"
-          className="flex flex-col gap-4 py-4 mx-4 justify-center items-center scroll-mt-36 pb-12"
+          className="flex flex-col gap-4 py-4 mx-4 justify-center items-center scroll-mt-36"
         >
           <Heading centered={true} title="Portfolio" />
           <div className="w-full max-w-full mx-auto px-4">

@@ -4,9 +4,20 @@ import ProjectCard from "./ProjectCard";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { MouseEventHandler } from "react";
+import { MouseEventHandler, useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import next from "next";
+
+interface Project {
+  name: string;
+  imgSrc: string;
+  imgAlt: string;
+  bgColor: string;
+  techs: string[];
+  description: string;
+  repositoryLink: string;
+  websiteLink: string;
+}
 
 const Projects = [
   {
@@ -15,17 +26,10 @@ const Projects = [
     imgAlt: "roguepixel",
     bgColor: "bg-[#dc2626]",
     techs: ["Next.js", "JavaScript", "Tailwind CSS"],
+    description:
+      "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     repositoryLink: "https://github.com/malvz22/RoguePixel-Company-Website",
     websiteLink: "https://roguepixel-woad.vercel.app/",
-  },
-  {
-    name: "Moonlit Sirens",
-    imgSrc: "/thumbnail/thumbnail-moonlit.webp",
-    imgAlt: "moonlit",
-    bgColor: "bg-black",
-    techs: ["Next.js", "TypeScript", "Tailwind CSS"],
-    repositoryLink: "https://github.com/malvz22/the-band-next",
-    websiteLink: "https://moonlightsirens.vercel.app/",
   },
   {
     name: "Simpang Raya",
@@ -33,6 +37,8 @@ const Projects = [
     imgAlt: "simpang raya",
     bgColor: "bg-[#A22020]",
     techs: ["Next.js", "TypeScript", "Tailwind CSS"],
+    description:
+      "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     repositoryLink: "https://github.com/malvz22/simpang-raya",
     websiteLink: "https://simpang-raya.vercel.app/",
   },
@@ -42,6 +48,8 @@ const Projects = [
     imgAlt: "nextgen gym",
     bgColor: "bg-[#000000]",
     techs: ["Next.js", "TypeScript", "Tailwind CSS"],
+    description:
+      "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     repositoryLink: "https://github.com/malvz22/nextgen-gym",
     websiteLink: "https://nextgen-gym.vercel.app/",
   },
@@ -51,6 +59,8 @@ const Projects = [
     imgAlt: "otaku vault",
     bgColor: "bg-[#1E90FF]",
     techs: ["Next.js", "TypeScript", "Tailwind CSS"],
+    description:
+      "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     repositoryLink: "https://github.com/malvz22/otaku-vault",
     websiteLink: "https://otaku-vault.vercel.app/",
   },
@@ -60,6 +70,8 @@ const Projects = [
     imgAlt: "spoon & fork",
     bgColor: "bg-[#F15025]",
     techs: ["Next.js", "TypeScript", "Tailwind CSS"],
+    description:
+      "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     repositoryLink: "https://github.com/malvz22/spoon-and-fork",
     websiteLink: "https://spoon-and-fork-ebon.vercel.app",
   },
@@ -69,6 +81,8 @@ const Projects = [
     imgAlt: "tenplus thumbnail",
     bgColor: "bg-[#e1e43d]",
     techs: ["React.js", "JavaScript", "Tailwind CSS"],
+    description:
+      "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     repositoryLink: "https://github.com/malvz22/tenplus-landing-page",
     websiteLink: "https://tenplus-seven.vercel.app/",
   },
@@ -97,6 +111,8 @@ const PrevArrow = ({ onClick }: { onClick?: MouseEventHandler }) => {
 };
 
 const DisplayProjects = () => {
+  const [selecetedProject, setSelectedProject] = useState<Project | null>(null);
+
   const settings = {
     dots: false,
     infinite: true,
@@ -118,11 +134,20 @@ const DisplayProjects = () => {
 
   const sortedProjects = [...Projects].reverse();
 
+  const handleClick = (project: Project) => {
+    setSelectedProject(project);
+    // You can add more logic here if needed, like opening a modal or navigating to a project detail page
+  };
+
   return (
     <div className="w-full max-w-full mx-auto relative">
       <Slider {...settings}>
         {sortedProjects.map((project, index) => (
-          <div key={index} className="px-4 w-full">
+          <div
+            key={index}
+            className="px-4 w-full"
+            onClick={() => handleClick(project)}
+          >
             <ProjectCard
               projectName={project.name}
               imgSrc={project.imgSrc}
