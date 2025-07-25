@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { MouseEventHandler, useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import next from "next";
+import Modal from "./Modal";
 
 interface Project {
   name: string;
@@ -111,7 +112,7 @@ const PrevArrow = ({ onClick }: { onClick?: MouseEventHandler }) => {
 };
 
 const DisplayProjects = () => {
-  const [selecetedProject, setSelectedProject] = useState<Project | null>(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const settings = {
     dots: false,
@@ -140,27 +141,40 @@ const DisplayProjects = () => {
   };
 
   return (
-    <div className="w-full max-w-full mx-auto relative">
-      <Slider {...settings}>
-        {sortedProjects.map((project, index) => (
-          <div
-            key={index}
-            className="px-4 w-full"
-            onClick={() => handleClick(project)}
-          >
-            <ProjectCard
-              projectName={project.name}
-              imgSrc={project.imgSrc}
-              imgAlt={project.imgAlt}
-              bgColor={project.bgColor}
-              techs={project.techs}
-              repositoryLink={project.repositoryLink}
-              websiteLink={project.websiteLink}
-            />
+    <>
+      <div className="w-full max-w-full mx-auto relative">
+        <Slider {...settings}>
+          {sortedProjects.map((project, index) => (
+            <div
+              key={index}
+              className="px-4 w-full"
+              onClick={() => handleClick(project)}
+            >
+              <ProjectCard
+                projectName={project.name}
+                imgSrc={project.imgSrc}
+                imgAlt={project.imgAlt}
+                bgColor={project.bgColor}
+                techs={project.techs}
+                repositoryLink={project.repositoryLink}
+                websiteLink={project.websiteLink}
+              />
+            </div>
+          ))}
+        </Slider>
+      </div>
+      <Modal
+        modalOpen={!!selectedProject}
+        onClose={() => setSelectedProject(null)}
+      >
+        {selectedProject && (
+          <div className="flex flex-col">
+            <h2 className="font-bold text-xl mb-2">{selectedProject.name}</h2>
+            <p>{selectedProject.description}</p>
           </div>
-        ))}
-      </Slider>
-    </div>
+        )}
+      </Modal>
+    </>
   );
 };
 
