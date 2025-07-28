@@ -8,6 +8,10 @@ import { MouseEventHandler, useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import next from "next";
 import Modal from "./Modal";
+import Link from "next/link";
+import { FaGithub } from "react-icons/fa6";
+import { LuGlobe } from "react-icons/lu";
+import Image from "next/image";
 
 interface Project {
   name: string;
@@ -83,11 +87,32 @@ const Projects = [
     bgColor: "bg-[#e1e43d]",
     techs: ["React.js", "JavaScript", "Tailwind CSS"],
     description:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Brand Product Landing Page for Tenplus, an electrolite brand. Featuring a clean and modern design with a focus on product showcase and user engagement. Focusing on responsive design and user-friendly navigation.",
     repositoryLink: "https://github.com/malvz22/tenplus-landing-page",
     websiteLink: "https://tenplus-seven.vercel.app/",
   },
 ];
+
+const techIconMap: Record<string, JSX.Element> = {
+  "React.js": (
+    <Image src={"/react.png"} width={24} height={24} alt="React.js" />
+  ),
+  "Next.js": (
+    <Image
+      src={"/nextjs-icon-light-background.png"}
+      width={24}
+      height={24}
+      alt="Next.js"
+    />
+  ),
+  JavaScript: <Image src={"/js.png"} width={24} height={24} alt="JavaScript" />,
+  TypeScript: (
+    <Image src={"/ts-logo-512.png"} width={24} height={24} alt="TypeScript" />
+  ),
+  "Tailwind CSS": (
+    <Image src={"/tailwind.svg"} width={24} height={24} alt="Tailwind CSS" />
+  ),
+};
 
 const NextArrow = ({ onClick }: { onClick?: MouseEventHandler }) => {
   return (
@@ -147,7 +172,7 @@ const DisplayProjects = () => {
           {sortedProjects.map((project, index) => (
             <div
               key={index}
-              className="px-4 w-full"
+              className="px-4 w-full cursor-pointer"
               onClick={() => handleClick(project)}
             >
               <ProjectCard
@@ -170,7 +195,36 @@ const DisplayProjects = () => {
         {selectedProject && (
           <div className="flex flex-col">
             <h2 className="font-bold text-xl mb-2">{selectedProject.name}</h2>
-            <p>{selectedProject.description}</p>
+            <p className="mb-3">{selectedProject.description}</p>
+
+            {/* Slider for each project here */}
+
+            <ul className="flex flex-row gap-2 mb-3">
+              {selectedProject.techs.map((tech, techIndex) => (
+                <li
+                  key={techIndex}
+                  className="items-center flex justify-center me-2"
+                >
+                  {techIconMap[tech]}
+                </li>
+              ))}
+            </ul>
+
+            <div className="flex flex-row gap-3 text-[14px] font-medium">
+              <Link target="_blank" href={`${selectedProject.repositoryLink}`}>
+                <div className="flex flex-row items-center gap-1">
+                  <p className="text-lg lg:text-xl">Github</p>
+                  <FaGithub />
+                </div>
+              </Link>
+
+              <Link target="_blank" href={`${selectedProject.websiteLink}`}>
+                <div className="flex flex-row items-center gap-1">
+                  <p className="text-lg lg:text-xl">Deploy</p>
+                  <LuGlobe />
+                </div>
+              </Link>
+            </div>
           </div>
         )}
       </Modal>

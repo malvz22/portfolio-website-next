@@ -38,7 +38,7 @@ const ProjectCard = ({
             priority={false}
           />
         </div>
-        <div className="flex flex-row gap-3 ps-2 text-[14px] font-medium">
+        {/* <div className="flex flex-row gap-3 ps-2 text-[14px] font-medium">
           <Link target="_blank" href={`${repositoryLink}`}>
             <div className="flex flex-row items-center gap-1">
               <p className="text-lg lg:text-xl">Github</p>
@@ -52,7 +52,7 @@ const ProjectCard = ({
               <LuGlobe />
             </div>
           </Link>
-        </div>
+        </div> */}
       </div>
     </>
   );
