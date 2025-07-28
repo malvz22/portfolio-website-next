@@ -32,7 +32,7 @@ const Projects = [
     bgColor: "bg-[#dc2626]",
     techs: ["Next.js", "JavaScript", "Tailwind CSS"],
     description:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "This company website is a personal training project built using Next.js, JavaScript, and Tailwind CSS. It showcases a clean and modern design with a focus on user experience, and responsive layout. This project features Home page, About page, Services page, and Teams page. In this project, I learned how to build responsive layouts with Tailwind CSS, implement dynamic routing using Next.js, and fetch external data using APIs. For demonstration purposes, the Team page uses random user data fetched from the Randomuser.me API.",
     repositoryLink: "https://github.com/malvz22/RoguePixel-Company-Website",
     websiteLink: "https://roguepixel-woad.vercel.app/",
   },
@@ -43,21 +43,21 @@ const Projects = [
     bgColor: "bg-[#A22020]",
     techs: ["Next.js", "TypeScript", "Tailwind CSS"],
     description:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Simpang Raya is a restaurant website built using Next.js, TypeScript, and Tailwind CSS. It was developed to promote Simpang Raya restaurant by showcasing its available menus and multiple restaurant locations. The site features a fully responsive layout and a modern design. This project includes a Home page, About page, Menu page, Locations page, and Contact form. From this project, I learned how to use libraries such as React Slick to implement image sliders.",
     repositoryLink: "https://github.com/malvz22/simpang-raya",
     websiteLink: "https://simpang-raya.vercel.app/",
   },
-  {
-    name: "NextGen Gym",
-    imgSrc: "/thumbnail/thumbnail-nextgen.webp",
-    imgAlt: "nextgen gym",
-    bgColor: "bg-[#000000]",
-    techs: ["Next.js", "TypeScript", "Tailwind CSS"],
-    description:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    repositoryLink: "https://github.com/malvz22/nextgen-gym",
-    websiteLink: "https://nextgen-gym.vercel.app/",
-  },
+  // {
+  //   name: "NextGen Gym",
+  //   imgSrc: "/thumbnail/thumbnail-nextgen.webp",
+  //   imgAlt: "nextgen gym",
+  //   bgColor: "bg-[#000000]",
+  //   techs: ["Next.js", "TypeScript", "Tailwind CSS"],
+  //   description:
+  //     "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  //   repositoryLink: "https://github.com/malvz22/nextgen-gym",
+  //   websiteLink: "https://nextgen-gym.vercel.app/",
+  // },
   {
     name: "OtakuVault",
     imgSrc: "/thumbnail/thumbnail-otaku-vault.webp",
@@ -65,7 +65,7 @@ const Projects = [
     bgColor: "bg-[#1E90FF]",
     techs: ["Next.js", "TypeScript", "Tailwind CSS"],
     description:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "OtakuVault is a personal project built using Next.js, TypeScript, and Tailwind CSS that allows users to search for anime and manga titles and view detailed information such as trailers, release dates, synopsis, and more. The website features a responsive and modern layout with a homepage showcasing current season anime, most popular anime, and most popular manga. It also includes a search function for anime and manga, genre-specific list pages, and top anime rankings. From this project, I learned how to fetch and display API data dynamically, build reusable components, and implement client-side filtering and pagination for improved user navigation.",
     repositoryLink: "https://github.com/malvz22/otaku-vault",
     websiteLink: "https://otaku-vault.vercel.app/",
   },
@@ -76,7 +76,7 @@ const Projects = [
     bgColor: "bg-[#F15025]",
     techs: ["Next.js", "TypeScript", "Tailwind CSS"],
     description:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Spoon & Fork is a personal project website built using Next.js, TypeScript, and Tailwind CSS. It allows users to discover recipes and explore detailed cooking instructions through a clean, modern, and fully responsive layout. The website features a homepage, recipe search, recipe categories, an About section, and a contact form. From this project, I learned how to manage dynamic routing in Next.js, implement search functionality, and build a responsive UI that enhances user experience.",
     repositoryLink: "https://github.com/malvz22/spoon-and-fork",
     websiteLink: "https://spoon-and-fork-ebon.vercel.app",
   },
@@ -87,7 +87,7 @@ const Projects = [
     bgColor: "bg-[#e1e43d]",
     techs: ["React.js", "JavaScript", "Tailwind CSS"],
     description:
-      "Brand Product Landing Page for Tenplus, an electrolite brand. Featuring a clean and modern design with a focus on product showcase and user engagement. Focusing on responsive design and user-friendly navigation.",
+      "This product landing page was a personal creative challenge project developed for Tenplus, an hydration and electrolyte brand. Built using React.js, JavaScript, and Tailwind CSS, it features a clean and modern design focused on product showcase and user engagement. The page is fully responsive and optimized for smooth navigation across devices. It includes key sections such as Hero, About, Product, and Testimonials.",
     repositoryLink: "https://github.com/malvz22/tenplus-landing-page",
     websiteLink: "https://tenplus-seven.vercel.app/",
   },
