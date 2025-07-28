@@ -213,7 +213,7 @@ const DisplayProjects = () => {
             <div className="flex flex-row gap-3 text-[14px] font-medium">
               <Link target="_blank" href={`${selectedProject.repositoryLink}`}>
                 <div className="flex flex-row items-center gap-1">
-                  <p className="text-lg lg:text-xl">Github</p>
+                  <p className="text-lg lg:text-xl">GitHub</p>
                   <FaGithub />
                 </div>
               </Link>
