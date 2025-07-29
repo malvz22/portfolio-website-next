@@ -22,6 +22,7 @@ interface Project {
   description: string;
   repositoryLink: string;
   websiteLink: string;
+  screenshots: string[];
 }
 
 const Projects = [
@@ -195,9 +196,24 @@ const DisplayProjects = () => {
         {selectedProject && (
           <div className="flex flex-col">
             <h2 className="font-bold text-xl mb-2">{selectedProject.name}</h2>
-            <p className="mb-3">{selectedProject.description}</p>
 
-            {/* Slider for each project here */}
+            <div className="w-full max-w-full mx-auto mb-4">
+              <Slider {...settings}>
+                <div className="px-2">
+                  <div className="w-full h-[180px] aspect-auto relative">
+                    <Image
+                      src={selectedProject.imgSrc}
+                      alt={selectedProject.imgAlt}
+                      fill
+                      style={{ objectFit: "cover" }}
+                      sizes="100%"
+                    />
+                  </div>
+                </div>
+              </Slider>
+            </div>
+
+            <p className="mb-3">{selectedProject.description}</p>
 
             <ul className="flex flex-row gap-2 mb-3">
               {selectedProject.techs.map((tech, techIndex) => (
