@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer
       id="contact-section"
-      className="flex flex-col gap-4 px-6 justify-center items-center text-center bg-[#F9FAFB]"
+      className="flex flex-col gap-4 px-6 justify-center items-center text-center bg-[#F9FAFB] dark:bg-neutral-800 text-black dark:text-white"
     >
       <div className="px-4 py-16 gap-12 text-center justify-center flex flex-col">
         <h1 className="font-bold text-2xl mb-4 text-center">Let's Connect!</h1>

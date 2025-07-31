@@ -123,7 +123,7 @@ export default function Home() {
                   Malvin Audriansyah
                 </span>
               </h1>
-              <h2 className="text-[24px] font-semibold text-[#555555] mb-4">
+              <h2 className="text-[24px] font-semibold text-[#555555] dark:text-gray-300 mb-4">
                 Front-End Developer
               </h2>
               <p className="mb-4 font-normal text-lg">
