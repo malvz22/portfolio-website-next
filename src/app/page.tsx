@@ -155,7 +155,7 @@ export default function Home() {
           <div className="flex flex-col gap-3 max-w-full">
             <Heading centered={true} title="About Me" />
             <div className="flex flex-col md:flex-row gap-4 items-center w-full max-w-full">
-              <div className="w-full max-w-full text-start text-sm md:text-base lg:text-lg ">
+              <div className="w-full max-w-full text-start text-base lg:text-lg leading-relaxed">
                 <p className="mb-3">
                   I'm a motivated front-end developer with a passion for
                   crafting visually engaging and user-friendly websites. While
@@ -183,7 +183,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-3 w-full max-w-full">
             <Heading title="Skills & Tech" centered={true} />
-            <p className="text-sm md:text-base lg:text-lg mb-3 text-center">
+            <p className="text-base lg:text-lg mb-3 text-center leading-relaxed">
               I work with a variety of tools to bring modern websites to life:
             </p>
 
@@ -207,7 +207,7 @@ export default function Home() {
                               sizes="100%"
                             />
                           </div>
-                          <p>{skills.name}</p>
+                          <p className="text-base lg:text-lg">{skills.name}</p>
                         </div>
                       </div>
                     ))}

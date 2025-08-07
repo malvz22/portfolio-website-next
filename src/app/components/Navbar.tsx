@@ -17,7 +17,7 @@ export default function Navbar() {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="w-full max-w-full items-center px-3 py-3 fixed top-0 left-0 z-[1000]">
+      <div className="w-full max-w-full items-center px-3 py-3 sticky lg:fixed top-0 left-0 z-[1000]">
         <header className="mx-auto flex flex-row bg-white/10 backdrop-blur-md border border-white/20 rounded-full shadow-md items-center text-black justify-between w-full max-w-[1200px] z-[100] p-6">
           <Link href={"#"}>
             <h1 className="font-bold text-[24px] dark:text-white">Malvin A.</h1>
