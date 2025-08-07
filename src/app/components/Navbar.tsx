@@ -55,7 +55,7 @@ export default function Navbar() {
           </div>
           <div
             onClick={handleMenu}
-            className="lg:hidden flex items-center justify-center cursor-pointer"
+            className="lg:hidden flex items-center justify-center cursor-pointer text-black dark:text-white"
           >
             <RxHamburgerMenu className={icon ? "hidden" : "flex"} size={34} />
             <IoClose className={icon ? "flex" : "hidden"} size={34} />
