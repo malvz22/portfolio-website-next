@@ -62,6 +62,12 @@ export default function Navbar() {
           </div>
         </header>
       </div>
+      {menu && (
+        <div
+          className="fixed inset-0 z-[999] bg-black/30 lg:hidden"
+          onClick={handleMenu}
+        ></div>
+      )}
       <div
         className={`flex flex-col z-[1000] fixed h-screen w-[60%] lg:hidden text-start items-start justify-between bg-white dark:bg-neutral-800 transform right-0 top-0 ${
           menu ? "translate-x-0" : "translate-x-full"

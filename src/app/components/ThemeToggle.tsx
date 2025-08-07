@@ -4,27 +4,35 @@ import { useEffect, useState } from "react";
 import { IoMoon, IoSunny } from "react-icons/io5";
 
 const ThemeToggle = () => {
-  const [theme, setTheme] = useState<"light" | "dark">(() => {
-    if (typeof window !== "undefined") {
-      return localStorage.theme === "dark" ? "dark" : "light";
-    }
-    return "light";
-  });
+  const [theme, setTheme] = useState<"light" | "dark">("light");
 
   useEffect(() => {
-    const root = window.document.documentElement;
+    //Determine the initial theme based on localStorage or system preference
+    const storedTheme = localStorage.getItem("theme");
+    if (
+      storedTheme === "dark" ||
+      (storedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      setTheme("dark");
+      document.documentElement.classList.add("dark");
+    } else {
+      setTheme("light");
+      document.documentElement.classList.remove("dark");
+    }
+  }, []);
+
+  useEffect(() => {
     if (theme === "dark") {
-      root.classList.add("dark");
+      document.documentElement.classList.add("dark");
       localStorage.setItem("theme", "dark");
     } else {
-      root.classList.remove("dark");
+      document.documentElement.classList.remove("dark");
       localStorage.setItem("theme", "light");
     }
   }, [theme]);
 
   const handleClick = () => {
     setTheme(theme === "dark" ? "light" : "dark");
-    console.log(`theme: ${theme}`);
   };
 
   return (
