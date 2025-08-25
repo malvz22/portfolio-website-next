@@ -23,6 +23,7 @@ interface Project {
   repositoryLink: string;
   websiteLink: string;
   screenshots: string[];
+  workInProgress: boolean;
 }
 
 const Projects = [
@@ -44,6 +45,7 @@ const Projects = [
       "/project-screenshots/roguepixel/screenshot-5.webp",
       "/project-screenshots/roguepixel/screenshot-6.webp",
     ],
+    workInProgress: false,
   },
   {
     name: "Simpang Raya",
@@ -66,18 +68,9 @@ const Projects = [
       "/project-screenshots/simpang-raya/screenshot-7.webp",
       "/project-screenshots/simpang-raya/screenshot-8.webp",
     ],
+    workInProgress: false,
   },
-  // {
-  //   name: "NextGen Gym",
-  //   imgSrc: "/thumbnail/thumbnail-nextgen.webp",
-  //   imgAlt: "nextgen gym",
-  //   bgColor: "bg-[#000000]",
-  //   techs: ["Next.js", "TypeScript", "Tailwind CSS"],
-  //   description:
-  //     "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  //   repositoryLink: "https://github.com/malvz22/nextgen-gym",
-  //   websiteLink: "https://nextgen-gym.vercel.app/",
-  // },
+
   {
     name: "OtakuVault",
     imgSrc: "/thumbnail/thumbnail-otaku-vault.webp",
@@ -99,6 +92,7 @@ const Projects = [
       "/project-screenshots/otaku-vault/screenshot-7.webp",
       "/project-screenshots/otaku-vault/screenshot-8.webp",
     ],
+    workInProgress: false,
   },
   {
     name: "Spoon & Fork",
@@ -122,6 +116,7 @@ const Projects = [
       "/project-screenshots/spoon-and-fork/screenshot-9.webp",
       "/project-screenshots/spoon-and-fork/screenshot-10.webp",
     ],
+    workInProgress: false,
   },
   {
     name: "Tenplus",
@@ -142,6 +137,25 @@ const Projects = [
       "/project-screenshots/tenplus/screenshot-6.webp",
       "/project-screenshots/tenplus/screenshot-7.webp",
     ],
+    workInProgress: false,
+  },
+  {
+    name: "PRIME TRIMS",
+    imgSrc: "/thumbnail/thumbnail-primetrims.webp",
+    imgAlt: "PRIME TRIMS thumbnail",
+    bgColor: "bg-[#72ffb6]",
+    techs: ["React.js", "JavaScript", "Tailwind CSS"],
+    description:
+      "This is a landing page developed for PRIME TRIMS, a barbershop located in South Jakarta. Built using React.js, JavaScript, and Tailwind CSS, it features a clean and modern design focused on promoting barber services and engaging potential clients. The page is fully responsive and optimized for smooth navigation across devices. It includes key sections such as Hero, About, Services, Pricelist, and Gallery. Additionally, I implemented Framer Motion to enhance user experience with smooth and modern animations.",
+    repositoryLink: "https://github.com/malvz22/prime-trims",
+    websiteLink: "https://prime-trims.vercel.app/",
+    screenshots: [
+      "/project-screenshots/prime-trims/screenshot-1.webp",
+      "/project-screenshots/prime-trims/screenshot-2.webp",
+      "/project-screenshots/prime-trims/screenshot-3.webp",
+      "/project-screenshots/prime-trims/screenshot-4.webp",
+    ],
+    workInProgress: true,
   },
 ];
 
@@ -235,6 +249,7 @@ const DisplayProjects = () => {
                 techs={project.techs}
                 repositoryLink={project.repositoryLink}
                 websiteLink={project.websiteLink}
+                workInProgress={project.workInProgress}
               />
             </div>
           ))}
@@ -246,7 +261,14 @@ const DisplayProjects = () => {
       >
         {selectedProject && (
           <div className="flex flex-col">
-            <h2 className="font-bold text-xl mb-2">{selectedProject.name}</h2>
+            <h2 className="font-bold text-xl mb-2">
+              {selectedProject.name}{" "}
+              {selectedProject.workInProgress && (
+                <span className="p-1 bg-black text-white rounded-md text-[13px] leading-none font-semibold align-middle">
+                  WIP
+                </span>
+              )}
+            </h2>
 
             <div className="w-full max-w-full mx-auto mb-4">
               <Slider {...settings}>
