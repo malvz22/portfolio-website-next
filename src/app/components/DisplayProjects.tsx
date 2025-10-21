@@ -157,6 +157,26 @@ const Projects = [
     ],
     workInProgress: false,
   },
+  {
+    name: "Signature Network",
+    imgSrc: "/thumbnail/thumbnail-signature-network.webp",
+    imgAlt: "Signature Network thumbnail",
+    bgColor: "bg-[#000000]",
+    techs: ["WordPress", "Elementor"],
+    description:
+      "Ongoing website maintenance and content management for the Signature Network, a Dubai-based company. Built with WordPress and Elementor Page Builder, the site features a clean and modern design that promotes the company’s services in Recruitment and Corporate Events. My responsibilities include updating and managing website content (such as blog articles, event landing pages, and other sections), optimizing site performance, and ensuring a responsive, user-friendly experience across all devices. The website includes dedicated pages such as Meet Our Team, Our Services, Careers, Bizzmatcher App, Events & Webinars, Blog, Podcasts, and CSR (Corporate Social Responsibility) initiatives. (NOTE: This is a WordPress-based project, so the code repository is not available. Clicking on the GitHub link will redirect you to my GitHub profile instead.)",
+    repositoryLink: "https://github.com/malvz22",
+    websiteLink: "https://signature-network.com/",
+    screenshots: [
+      "/project-screenshots/signature-network/screenshot-1.webp",
+      "/project-screenshots/signature-network/screenshot-2.webp",
+      "/project-screenshots/signature-network/screenshot-3.webp",
+      "/project-screenshots/signature-network/screenshot-4.webp",
+      "/project-screenshots/signature-network/screenshot-5.webp",
+      "/project-screenshots/signature-network/screenshot-6.webp",
+    ],
+    workInProgress: false,
+  },
 ];
 
 const techIconMap: Record<string, JSX.Element> = {
@@ -177,6 +197,17 @@ const techIconMap: Record<string, JSX.Element> = {
   ),
   "Tailwind CSS": (
     <Image src={"/tailwind.svg"} width={24} height={24} alt="Tailwind CSS" />
+  ),
+  WordPress: (
+    <Image src={"/wordpress.png"} width={24} height={24} alt="WordPress" />
+  ),
+  Elementor: (
+    <Image
+      src={"/Elementor-Logo-Symbol-Red.svg"}
+      width={24}
+      height={24}
+      alt="Elementor"
+    />
   ),
 };
 

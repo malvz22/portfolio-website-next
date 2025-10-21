@@ -83,7 +83,7 @@ const categorizedSkills = [
     ],
   },
   {
-    category: "Tools",
+    category: "Development Tools & Platforms",
     skills: [
       {
         name: "Git",
@@ -92,6 +92,14 @@ const categorizedSkills = [
       {
         name: "VS Code",
         icon: "/vscode.png",
+      },
+      {
+        name: "WordPress",
+        icon: "/wordpress.png",
+      },
+      {
+        name: "Elementor",
+        icon: "/Elementor-Logo-Symbol-Red.svg",
       },
     ],
   },
