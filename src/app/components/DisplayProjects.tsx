@@ -155,7 +155,7 @@ const Projects = [
       "/project-screenshots/prime-trims/screenshot-3.webp",
       "/project-screenshots/prime-trims/screenshot-4.webp",
     ],
-    workInProgress: true,
+    workInProgress: false,
   },
 ];
 
